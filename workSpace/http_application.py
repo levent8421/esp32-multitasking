@@ -25,13 +25,18 @@ class AbstractHttpServerApplication(poll_socket_application.AbstractPollerSocket
     def on_read_enable(self, socket_wrap):
         socket = socket_wrap.get_socket()
         data = socket.recv(MAX_HTTP_REQUEST_SIZE)
-        method, url, headers, body = self.http_unpack(data)
-        status, resp = self.__handler(url=url, headers=headers, body=body, method=method)
-        socket.send(('HTTP/1.1 %s\r\n' % status).encode())
-        socket.send(('Content-Length: %s\r\n' % len(resp)).encode())
-        socket.send(b'\r\n')
-        socket.send(resp.encode())
-        socket_wrap.close()
+        try:
+          method, url, headers, body = self.http_unpack(data)
+          status, resp = self.__handler(url=url, headers=headers, body=body, method=method)
+          socket.send(('HTTP/1.1 %s\r\n' % status).encode())
+          socket.send(('Content-Length: %s\r\n' % len(resp)).encode())
+          socket.send(b'\r\n')
+          socket.send(resp.encode())
+        except ServerError as e:
+          socket.send(b'HTTP/1.1 500 INTERNAL_SERVER_ERROR\r\n\r\n')
+          socket.send(str(e).encode())
+        finally:
+          socket_wrap.close()
 
     @staticmethod
     def http_unpack(data):
@@ -50,6 +55,8 @@ class AbstractHttpServerApplication(poll_socket_application.AbstractPollerSocket
     @staticmethod
     def unpack_status_line(status_line):
         res = re.match(r'^(GET|POST|PUT|DELETE|OPTION)\s(.+)\s(.*)', status_line)
+        if not res:
+            raise ServerError('Invalidate status line [%s]' % status_line)
         method = res.group(1)
         url = res.group(2)
         try:
@@ -218,7 +225,7 @@ class StaticRequestHandler(AbstractRequestHandler):
         if '?' in url:
             url = url.split('/')[0]
         filename = self.__base_path + url
-        if not os.path.exists(filename):
+        if not StaticRequestHandler.__file_exixts(filename):
             return super().on_not_found(method, url, headers, body)
         print('Resolve Static request', filename)
         body = StaticRequestHandler.__read_file(filename)
@@ -230,3 +237,13 @@ class StaticRequestHandler(AbstractRequestHandler):
         with f:
             content = f.read()
         return content
+
+    @staticmethod
+    def __file_exixts(filename):
+        try:
+            os.stat(filename)
+            return True
+        except OSError:
+            return False
+            
+

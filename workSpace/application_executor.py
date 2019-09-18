@@ -1,3 +1,5 @@
+import machine
+
 class Executor:
     def __init__(self):
         self.__apps = None
@@ -39,13 +41,14 @@ class MicroPythonExecutor(Executor):
 
     @staticmethod
     def build_pin(pin_no, mode):
-        return 'PIN %s %s' % (pin_no, mode)
+        return machine.Pin(pin_no, mode)
 
     def pin_out(self, pin_no, value):
         if pin_no in self.__pin_cache:
             pin = self.__pin_cache[pin_no]
         else:
-            pin = MicroPythonExecutor.build_pin(pin_no, 1)
+            pin = MicroPythonExecutor.build_pin(pin_no, machine.Pin.OUT)
             self.__pin_cache[pin_no] = pin
-        print(pin, pin_no, value)
+        pin.value(value)
+
 

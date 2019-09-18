@@ -22,7 +22,7 @@ class CustomApplication(application.AbstractApplication):
         time.sleep(0.5)
 
 
-handler = http_application.StaticRequestHandler(executor, base_path='/home/levent/work/python/esp32-multitasking/')
+handler = http_application.StaticRequestHandler(executor, base_path='/')
 
 
 class IndexController(http_application.Controller):
@@ -42,13 +42,14 @@ class PinController(http_application.Controller):
     def post(self, request):
         body = request.body
         ctx = request.ctx
+        print('PIN Request',body)
         if body == 'ON':
-            ctx.pin_out(1, 1)
+            ctx.pin_out(2, 1)
         elif body == 'OFF':
-            ctx.pin_out(1, 0)
+            ctx.pin_out(2, 0)
         else:
             return '400 BAD_REQUEST', 'Invalidate Params'
-        # return 'OK'
+        return 'OK'
 
 
 pin_controller = PinController()
@@ -68,4 +69,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
