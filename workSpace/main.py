@@ -22,7 +22,7 @@ class CustomApplication(AbstractApplication):
 
     def loop(self):
         self.__loop_times += 1
-        print('loop', self.__loop_times)
+        #print('loop', self.__loop_times)
         time.sleep(0.5)
 
 
@@ -31,7 +31,7 @@ handler = StaticRequestHandler(executor, base_path='/')
 
 class IndexController(Controller):
     def get(self, request):
-        return Response(body='OK Index')
+        return Response(headers=[('Location', '/index.html')], body='OK Index')
 
 
 index_controller = IndexController()
@@ -75,4 +75,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
 

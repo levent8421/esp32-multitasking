@@ -51,6 +51,7 @@ class Request:
 
 HTTP_STATUS_TABLE = {
     200: b'200 OK',
+    302: b'302 REDIRECT',
     400: b'400 BAD_REQUEST',
     404: b'404 NOT_FOUND',
     405: b'405 METHOD_NOT_ALLOWED',
@@ -85,3 +86,4 @@ class Response:
     @property
     def body(self):
         return self.__body
+
