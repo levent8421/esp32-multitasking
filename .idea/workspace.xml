@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e8a66ac-75cc-4728-b535-5e2a365e2f4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workSpace/mapp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workSpace/mapp/http_conponent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workSpace/mapp/http_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/esp32-multitasking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/esp32-multitasking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/application_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/boot.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/boot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/conf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/http_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/poll_socket_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/poll_socket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workSpace/socket_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/socket_server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568789344729</updated>
-      <workItem from="1568879228172" duration="4248000" />
+      <workItem from="1568879228172" duration="6474000" />
     </task>
     <servers />
   </component>

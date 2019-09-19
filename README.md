@@ -1,0 +1,6 @@
+# MicroPython NIO 多任务脚手架
+
+该项目使用MicroPython的Socket NIO和poll组件实现了一个支持非阻塞socket server的多任务脚手架，
+在microPython的不支持多线程环境下，使程序在处理网络请求的同时也能运行其他业务代码（宏观上同时运行）。
+
+项目实现了一个较为完整的简单非阻塞http服务器，包含Request、Response、Controller等基础组件，可快速方便实现一个多任务Http服务器。
