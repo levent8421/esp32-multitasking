@@ -1,9 +1,9 @@
 import socket
 
-import application
+from .application import AbstractApplication
 
 
-class AbstractSocketServerApplication(application.AbstractApplication):
+class AbstractSocketServerApplication(AbstractApplication):
     def __init__(self, host, port=80):
         super().__init__()
         self.__host = host
@@ -37,4 +37,3 @@ class AbstractSocketServerApplication(application.AbstractApplication):
 
     def on_connected(self, conn, addr):
         pass
-

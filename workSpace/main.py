@@ -1,14 +1,18 @@
 import time
 
-import application
-import application_executor
-import http_application
 import wifi
 
-executor = application_executor.MicroPythonExecutor()
+from mapp import StaticRequestHandler, \
+    AbstractApplication, \
+    MicroPythonExecutor, \
+    Controller, \
+    AbstractHttpServerApplication, \
+    Response
+
+executor = MicroPythonExecutor()
 
 
-class CustomApplication(application.AbstractApplication):
+class CustomApplication(AbstractApplication):
     def __init__(self):
         super().__init__()
         self.__loop_times = 0
@@ -22,52 +26,53 @@ class CustomApplication(application.AbstractApplication):
         time.sleep(0.5)
 
 
-handler = http_application.StaticRequestHandler(executor, base_path='/')
+handler = StaticRequestHandler(executor, base_path='/')
 
 
-class IndexController(http_application.Controller):
+class IndexController(Controller):
     def get(self, request):
-        return 'OK' + request.method
+        return Response(body='OK Index')
 
 
 index_controller = IndexController()
 handler.register_handler('/', index_controller)
 
 
-class PinController(http_application.Controller):
+class PinController(Controller):
     def get(self, request):
         request.ctx.pin_out(1, 2)
-        return 'OK'
+        return Response(body='OK Pin')
 
     def post(self, request):
         body = request.body
         ctx = request.ctx
-        print('PIN Request',body)
+        print('PIN Request', body)
         if body == 'ON':
             ctx.pin_out(2, 1)
         elif body == 'OFF':
             ctx.pin_out(2, 0)
         else:
-            return '400 BAD_REQUEST', 'Invalidate Params'
-        return 'OK'
+            return Response(status=404, body='Invalidate Parameters')
+        return Response(body='Pin operation OK')
 
 
 pin_controller = PinController()
 handler.register_handler('/pin', pin_controller)
 
 
-class NetApplication(http_application.AbstractHttpServerApplication):
+class NetApplication(AbstractHttpServerApplication):
     def __init__(self, host, port):
         super().__init__(handler, host, port)
-
-
-def main():
-    wifi.connect()
+        
+def on_wifi_ready():
     apps = [CustomApplication(), NetApplication('0.0.0.0', 8081)]
     executor.run(apps)
+
+def main():
+    wifi.connect(on_wifi_ready)
+    
 
 
 if __name__ == '__main__':
     main()
-
 

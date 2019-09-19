@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e8a66ac-75cc-4728-b535-5e2a365e2f4c" name="Default Changelist" comment="" />
+    <list default="true" id="9e8a66ac-75cc-4728-b535-5e2a365e2f4c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workSpace/mapp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workSpace/mapp/http_conponent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workSpace/mapp/http_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/esp32-multitasking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/esp32-multitasking.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/application_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/boot.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/boot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/conf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/http_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/http.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/poll_socket_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/poll_socket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workSpace/socket_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/workSpace/mapp/socket_server.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,10 +31,20 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1R01kkXPYvpI3Yjn6EHDvmiTl9D" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\mine\micropython\esp32-multitasking\workSpace\mapp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -45,6 +71,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -70,7 +97,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568789344729</updated>
+      <workItem from="1568879228172" duration="4248000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
